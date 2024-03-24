@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shipment_date: 2024-03-24 11:28:05
+  address: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zip_code: MyString
+  order: one
+
+two:
+  shipment_date: 2024-03-24 11:28:05
+  address: MyString
+  city: MyString
+  state: MyString
+  country: MyString
+  zip_code: MyString
+  order: two
