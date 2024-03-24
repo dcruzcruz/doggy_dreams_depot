@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     end
   end
 
-  # Other routes for your application
+  # Other routes for the application
+
+  resources :products
+  resources :categories
 
 end
