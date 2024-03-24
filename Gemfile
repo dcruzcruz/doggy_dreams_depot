@@ -71,6 +71,7 @@ group :test do
 
 end
 
+gem 'bootstrap', '~> 5.3', '>= 5.3.2'
 gem 'activeadmin'
 gem 'devise'
 gem 'sassc'

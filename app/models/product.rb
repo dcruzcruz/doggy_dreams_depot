@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   end
 
   def self.ransackable_attributes(auth_object = nil)
-    ["category_id", "created_at", "description", "id", "price", "sku", "stock", "updated_at"]
+    ["category_id", "created_at","product_name", "description", "id", "price", "sku", "stock", "updated_at"]
   end
 
   belongs_to :category
@@ -14,4 +14,6 @@ class Product < ApplicationRecord
   has_many :wishlists
 
   has_one_attached :image
+
+  validates :product_name, presence: true
 end

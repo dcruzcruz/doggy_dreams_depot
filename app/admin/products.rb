@@ -1,11 +1,12 @@
 ActiveAdmin.register Product do
-  permit_params :sku, :description, :price, :stock, :category_id, :image
+  permit_params :sku,:product_name, :description, :price, :stock, :category_id, :image
 
   remove_filter :image_attachment, :image_blob
 
   index do
     selectable_column
     id_column
+    column :product_name
     column :sku
     column :description
     column :price
@@ -14,12 +15,14 @@ ActiveAdmin.register Product do
     actions
   end
 
+  filter :product_name
   filter :sku
   filter :description
   filter :category
 
   form do |f|
     f.inputs do
+      f.input :product_name
       f.input :sku
       f.input :description
       f.input :price
