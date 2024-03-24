@@ -74,5 +74,4 @@ end
 gem 'activeadmin'
 gem 'devise'
 gem 'sassc'
-
-
+gem 'image_processing'

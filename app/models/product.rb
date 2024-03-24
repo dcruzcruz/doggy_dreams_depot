@@ -12,4 +12,6 @@ class Product < ApplicationRecord
   has_many :order_items
   has_many :carts
   has_many :wishlists
+
+  has_one_attached :image
 end

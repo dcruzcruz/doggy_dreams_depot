@@ -1,5 +1,7 @@
 ActiveAdmin.register Product do
-  permit_params :sku, :description, :price, :stock, :category_id
+  permit_params :sku, :description, :price, :stock, :category_id, :image
+
+  remove_filter :image_attachment, :image_blob
 
   index do
     selectable_column
@@ -23,6 +25,7 @@ ActiveAdmin.register Product do
       f.input :price
       f.input :stock
       f.input :category
+      f.input :image, as: :file
     end
     f.actions
   end
