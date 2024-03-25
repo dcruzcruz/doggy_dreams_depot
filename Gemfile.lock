@@ -114,6 +114,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.12.0)
     execjs (2.9.1)
+    faker (3.2.3)
+      i18n (>= 1.8.11, < 2)
     ffi (1.16.3)
     formtastic (5.0.0)
       actionpack (>= 6.0.0)
@@ -322,9 +324,12 @@ DEPENDENCIES
   capybara
   debug
   devise
+  faker
   image_processing
   importmap-rails
   jbuilder
+  jquery-rails
+  kaminari
   puma (~> 5.0)
   rails (~> 7.0.8, >= 7.0.8.1)
   sassc

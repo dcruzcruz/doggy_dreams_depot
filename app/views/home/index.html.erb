@@ -4,18 +4,33 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <% @products.each do |product| %>
         <div class="col">
-          <div class="card h-100">
+          <div class="card" style="width: 18rem;">
             <%= link_to product_path(product) do %>
-              <%= image_tag product.image.variant(resize: "300x300"), class: "card-img-top", alt: product.product_name %>
+              <% if product.image.attached? %>
+                <%= image_tag url_for(product.image), :size => "180x180", class: "card-img-top", alt: product.product_name %>
+              <% else %>
+                <%= image_tag "image.jpeg", :size => "180x180", class: "card-img-top", alt: "Placeholder Image" %>
+              <% end %>
             <% end %>
             <div class="card-body">
               <h5 class="card-title"><%= product.product_name %></h5>
               <p class="card-text"><%= product.description %></p>
               <p class="card-text"><strong>Price:</strong> <%= number_to_currency(product.price) %></p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
         </div>
       <% end %>
     </div>
   </main>
+   <%= paginate @products %>
 </div>
+
+<%= javascript_include_tag "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity: "sha384-rHyoN1iRsVXVdaRRtjeJFq5bl5F+8eMpF01IGWEnMzD5l1TI3ZgV6e7DAVBEUGKf", crossorigin: "anonymous" %>
+
+<footer class="bg-light p-3 mt-4">
+  <div class="container">
+    <p>&copy; 2024 DoggyDreamsDepot. All rights reserved.</p>
+    <!-- Add any additional footer content or links -->
+  </div>
+</footer>
