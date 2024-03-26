@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
   # Other routes for the application
 
-  resources :products
   resources :categories
+  resources :products, only: [:index, :show]
 
 end
