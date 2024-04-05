@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get '/contact', to: 'contact_pages#show'
+  get '/about', to: 'about_pages#show'
+
   # Root route
   root to: "home#index" # Assuming you have a HomeController with an index action
 
