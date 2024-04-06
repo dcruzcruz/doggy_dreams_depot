@@ -4,7 +4,7 @@ class Category < ApplicationRecord
     ["created_at", "id", "name", "updated_at"]
   end
 
-  has_many :products
+  has_many :products, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true
 

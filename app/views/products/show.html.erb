@@ -1,13 +1,17 @@
-<div class="card" style="width: 18rem;">
-  <% if @product.image.attached? %>
-    <%= image_tag url_for(@product.image), class: "card-img-top", alt: @product.product_name %>
-  <% else %>
-    <%= image_tag "image.jpeg", class: "card-img-top", alt: "Placeholder Image" %>
-  <% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= @product.product_name %></h5>
-    <p class="card-text"><%= @product.description %></p>
-    <p class="card-text"><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <% if @product.image.attached? %>
+        <%= image_tag url_for(@product.image), class: "img-fluid rounded", alt: @product.product_name %>
+      <% else %>
+        <%= image_tag "image.jpeg", class: "img-fluid rounded", alt: "Placeholder Image" %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <h2><%= @product.product_name %></h2>
+      <p><%= @product.description %></p>
+      <p><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
+      <a href="#" class="btn btn-primary">Buy it</a>
+    </div>
   </div>
 </div>

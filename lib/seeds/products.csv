@@ -1,0 +1,101 @@
+sku,description,price,stock,category_id,product_name,image
+TOY001,Chewy Rope Knot Toy for dogs to play and chew on.,9.99,50,1,Chewy Rope Knot Toy,TOY001.jpg
+TOY002,Squeaky Plush Bone toy for playful dogs.,7.49,30,1,Squeaky Plush Bone,TOY002.jpg
+TOY003,Rubber Fetch Ball  perfect for outdoor fetching fun.,5.99,40,1,Rubber Fetch Ball,TOY003.jpg
+TOY004,Interactive Puzzle Toy to keep your dog mentally stimulated.,12.99,20,1,Interactive Puzzle Toy,TOY004.jpg
+TOY005,Durable Tug-of-War Toy for interactive play sessions.,8.99,35,1,Durable Tug-of-War Toy,istockphoto-1128757661-612x612.jpg
+TOY006,Frisbee Flying Disc for active outdoor play.,6.49,25,1,Frisbee Flying Disc,istockphoto-483147984-612x612.jpg
+TOY007,Tough Rubber Chew Toy for heavy chewers.,10.99,15,1,Tough Rubber Chew Toy,istockphoto-579442136-612x612.jpg
+TOY008,Tennis Ball Launcher for long-distance fetching.,14.99,10,1,Tennis Ball Launcher,istockphoto-1559036794-612x612.jpg
+TOY009,Bouncy Rubber Ball for bouncing fun.,4.99,30,1,Bouncy Rubber Ball,istockphoto-185279612-612x612.jpg
+TOY010,Plush Squeaky Duck for cuddly playtime.,8.49,20,1,Plush Squeaky Duck,istockphoto-1296961254-612x612.jpg
+TOY011,Rope Ball Tug Toy for tug-of-war games.,6.99,25,1,Rope Ball Tug Toy,istockphoto-1264342602-612x612.jpg
+TOY012,Rubber Dental Chew Toy for dental health.,11.49,15,1,Rubber Dental Chew Toy,istockphoto-1151999227-612x612.jpg
+TOY013,Interactive Treat Dispenser Ball for rewarding play.,13.99,20,1,Interactive Treat Dispenser Ball,
+TOY014,Floating Water Toy for fun in the pool or lake.,9.49,10,1,Floating Water Toy,
+TOY015,Rubber Ring Toss Toy for interactive play.,7.99,15,1,Rubber Ring Toss Toy,
+TOY016,Plush Squeaky Hedgehog for adorable playtime.,6.49,25,1,Plush Squeaky Hedgehog,
+TOY017,Nylon Frisbee Ring for durable fetching.,5.49,20,1,Nylon Frisbee Ring,
+TOY018,Tug-of-War Rope with Handle for interactive play.,8.99,30,1,Tug-of-War Rope with Handle,
+TOY019,Rubber Bone Chew Toy for satisfying chewing.,7.49,25,1,Rubber Bone Chew Toy,
+TOY020,Squeaky Plush Octopus for entertaining play.,8.99,20,1,Squeaky Plush Octopus,
+TREAT001,Chicken Jerky Strips  delicious treats for dogs.,12.99,100,2,Chicken Jerky Strips,istockphoto-1483277409-612x612.jpg
+TREAT002,Bacon Flavored Biscuits  a tasty reward for your furry friend.,5.99,80,2,Bacon Flavored Biscuits,istockphoto-483835051-612x612.jpg
+TREAT003,Peanut Butter Filled Bones  irresistible treats for chewing pleasure.,8.49,60,2,Peanut Butter Filled Bones,istockphoto-526978479-612x612.jpg
+TREAT004,Salmon Flavored Training Treats  perfect for rewarding good behavior.,9.99,70,2,Salmon Flavored Training Treats,istockphoto-98463524-612x612.jpg
+TREAT005,Dental Health Sticks  promoting dental hygiene with every bite.,7.49,90,2,Dental Health Sticks,
+TREAT006,Freeze-Dried Liver Bites  nutritious and delicious snacks for dogs.,14.99,50,2,Freeze-Dried Liver Bites,
+TREAT007,Carrot and Apple Chewies  natural treats packed with vitamins and flavor.,6.99,60,2,Carrot and Apple Chewies,
+TREAT008,Beef Liver Training Treats  high-value rewards for effective training.,11.49,40,2,Beef Liver Training Treats,
+TREAT009,Turkey and Sweet Potato Cookies  savory treats for a happy and healthy dog.,8.99,45,2,Turkey and Sweet Potato Cookies,
+TREAT010,Cheese Flavored Dental Chews  promoting oral health with tasty cheese flavor.,10.49,55,2,Cheese Flavored Dental Chews,
+TREAT011,Crunchy Chicken Bites  satisfying snacks for dogs with a love for chicken.,7.99,65,2,Crunchy Chicken Bites,
+TREAT012,Lamb and Rice Treat Sticks  delicious snacks made with premium lamb and rice.,9.49,50,2,Lamb and Rice Treat Sticks,
+TREAT013,Pumpkin Pie Biscuits  festive treats with the flavor of pumpkin pie.,6.49,70,2,Pumpkin Pie Biscuits,
+TREAT014,Duck Jerky Twists  savory treats twisted with irresistible duck flavor.,12.49,40,2,Duck Jerky Twists,
+TREAT015,Blueberry Yogurt Drops  fruity and creamy treats for a special indulgence.,8.99,55,2,Blueberry Yogurt Drops,
+TREAT016,Venison Jerky Strips  protein-rich treats with the flavor of venison.,11.99,35,2,Venison Jerky Strips,
+TREAT017,Coconut and Chia Seed Bites  nutritious treats packed with coconut and chia seeds.,9.49,50,2,Coconut and Chia Seed Bites,
+TREAT018,Turkey and Cranberry Delights  festive treats with the flavors of turkey and cranberry.,10.99,45,2,Turkey and Cranberry Delights,
+TREAT019,Kangaroo Jerky Nuggets  exotic treats made with kangaroo meat.,13.49,30,2,Kangaroo Jerky Nuggets,
+TREAT020,Tuna and Catnip Flavored Treats  irresistible treats for cats and dogs alike.,7.99,60,2,Tuna and Catnip Flavored Treats,
+BED001,Plush Orthopedic Bed providing comfort and support for your pet.,39.99,20,3,Plush Orthopedic Bed,istockphoto-1339492846-612x612.jpg
+BED002,Waterproof Outdoor Bed for adventurous dogs.,29.99,15,3,Waterproof Outdoor Bed,istockphoto-1473864448-612x612.jpg
+BED003,Memory Foam Bolster Bed offering ultimate relaxation.,49.99,10,3,Memory Foam Bolster Bed,istockphoto-657438660-612x612.jpg
+BED004,Cozy Cave Bed for dogs who love to burrow.,34.99,25,3,Cozy Cave Bed,istockphoto-1463410456-612x612.jpg
+BED005,Elevated Cooling Bed for hot summer days.,44.99,20,3,Elevated Cooling Bed,
+BED006,Self-Warming Crate Mat providing warmth without electricity.,19.99,30,3,Self-Warming Crate Mat,
+BED007,Luxury Faux Fur Bed for pampered pets.,59.99,15,3,Luxury Faux Fur Bed,
+BED008,Travel-Friendly Foldable Bed for on-the-go comfort.,24.99,20,3,Travel-Friendly Foldable Bed,
+BED009,Sofa-Style Lounge Bed for dogs who like to stretch out.,49.99,10,3,Sofa-Style Lounge Bed,
+BED010,Hammock Style Bed providing breathable comfort.,34.99,15,3,Hammock Style Bed,
+BED011,Donut Cuddler Bed offering a sense of security.,29.99,25,3,Donut Cuddler Bed,
+BED012,Calming Anti-Anxiety Bed for anxious pets.,39.99,20,3,Calming Anti-Anxiety Bed,
+BED013,Cooling Gel Pad Bed for instant relief from heat.,39.99,15,3,Cooling Gel Pad Bed,
+BED014,Reversible Sherpa Bed for versatility and coziness.,29.99,20,3,Reversible Sherpa Bed,
+BED015,Heated Thermal Bed for warmth during cold nights.,49.99,10,3,Heated Thermal Bed,
+BED016,Round Pillow Bed providing 360-degree comfort.,34.99,25,3,Round Pillow Bed,
+BED017,Portable Roll-Up Bed for camping adventures.,24.99,30,3,Portable Roll-Up Bed,
+BED018,Wooden Frame Dog Bed for rustic charm.,54.99,15,3,Wooden Frame Dog Bed,
+BED019,Plaid Print Sleeping Bag for snuggling up indoors or outdoors.,39.99,20,3,Plaid Print Sleeping Bag,
+BED020,Cooling Mesh Mat Bed for breathable and cooling comfort.,29.99,25,3,Cooling Mesh Mat Bed,
+FOOD001,Grain-Free Salmon & Sweet Potato Recipe  a nutritious meal for your dog.,34.99,40,4,Grain-Free Salmon & Sweet Potato Recipe,istockphoto-1335495052-612x612.jpg
+FOOD002,Chicken & Rice Formula providing essential nutrients for your pet's health.,29.99,35,4,Chicken & Rice Formula,istockphoto-545444372-612x612.jpg
+FOOD003,Beef & Vegetable Stew  a hearty and balanced meal for dogs.,39.99,30,4,Beef & Vegetable Stew,istockphoto-511522714-612x612.jpg
+FOOD004,Lamb & Brown Rice Recipe  promoting healthy digestion and skin.,36.99,25,4,Lamb & Brown Rice Recipe,istockphoto-1298426222-612x612.jpg
+FOOD005,Turkey & Cranberry Entree  a festive meal for special occasions.,42.99,20,4,Turkey & Cranberry Entree,istockphoto-495329978-612x612.jpg
+FOOD006,Duck & Pea Formula  ideal for dogs with food sensitivities.,38.99,30,4,Duck & Pea Formula,
+FOOD007,Bison & Barley Blend  providing a protein-rich and satisfying meal.,44.99,25,4,Bison & Barley Blend,
+FOOD008,Venison & Potato Stew  a novel protein source for dogs with allergies.,46.99,20,4,Venison & Potato Stew,
+FOOD009,Salmon & Pumpkin Feast  promoting joint health and digestive wellness.,37.99,35,4,Salmon & Pumpkin Feast,
+FOOD010,Chicken & Quinoa Delight  a high-protein and gluten-free meal option.,32.99,40,4,Chicken & Quinoa Delight,
+FOOD011,Beef & Green Bean Casserole  a tasty and nutritious meal for dogs.,41.99,25,4,Beef & Green Bean Casserole,
+FOOD012,Lamb & Lentil Medley  a balanced and grain-free meal option.,35.99,30,4,Lamb & Lentil Medley,
+FOOD013,Turkey & Carrot Dinner  packed with vitamins and antioxidants.,39.99,25,4,Turkey & Carrot Dinner,
+FOOD014,Duck & Blueberry Delight  providing a burst of flavor and antioxidants.,43.99,20,4,Duck & Blueberry Delight,
+FOOD015,Bison & Sweet Potato Stew  a hearty and satisfying meal for dogs.,38.99,30,4,Bison & Sweet Potato Stew,
+FOOD016,Venison & Spinach Entree  promoting overall health and vitality.,42.99,25,4,Venison & Spinach Entree,
+FOOD017,Rabbit & Carrot Stew  a novel protein source for dogs with sensitivities.,45.99,20,4,Rabbit & Carrot Stew,
+FOOD018,Trout & Sweet Potato Recipe  a delicious and nutritious meal option.,36.99,30,4,Trout & Sweet Potato Recipe,
+FOOD019,Chicken & Chickpea Curry  a flavorful and protein-rich meal for dogs.,39.99,25,4,Chicken & Chickpea Curry,
+FOOD020,Pork & Apple Casserole  a unique and tasty meal for your furry friend.,44.99,20,4,Pork & Apple Casserole,
+APP001,Waterproof Reflective Raincoat keeping your dog dry and visible in the rain.,19.99,10,5,Waterproof Reflective Raincoat,istockphoto-1047614026-612x612.jpg
+APP002,Plaid Flannel Shirt for a stylish and cozy look.,14.99,25,5,Plaid Flannel Shirt,istockphoto-1931924707-612x612.jpg
+APP003,Cable Knit Sweater providing warmth and style.,24.99,20,5,Cable Knit Sweater,istockphoto-1333201464-612x612.jpg
+APP004,Quilted Puffer Vest for extra warmth during cold weather.,29.99,15,5,Quilted Puffer Vest,istockphoto-512906586-612x612.jpg
+APP005,Fleece-Lined Hoodie keeping your dog warm and comfortable.,19.99,20,5,Fleece-Lined Hoodie,istockphoto-1446507864-612x612.jpg
+APP006,Reflective Safety Vest for visibility during outdoor activities.,17.99,30,5,Reflective Safety Vest,istockphoto-1163909140-612x612.jpg
+APP007,Sherpa-Lined Jacket for ultimate coziness and style.,34.99,15,5,Sherpa-Lined Jacket,istockphoto-1203285594-612x612.jpg
+APP008,Canvas Utility Jacket for durability and functionality.,27.99,20,5,Canvas Utility Jacket,istockphoto-1188246390-612x612.jpg
+APP009,Floral Print Dress for a fashionable and feminine look.,22.99,10,5,Floral Print Dress,istockphoto-174834895-612x612.jpg
+APP010,Denim Overalls for a cute and casual style.,19.99,15,5,Denim Overalls,istockphoto-1331725340-612x612.jpg
+APP011,Bow Tie Collar adding a touch of elegance to any outfit.,9.99,25,5,Bow Tie Collar,istockphoto-1206242629-612x612.jpg
+APP012,Neoprene Sport Coat for active dogs who love outdoor adventures.,32.99,20,5,Neoprene Sport Coat,istockphoto-1332164041-612x612.jpg
+APP013,Wool Blend Peacoat for classic style and warmth.,39.99,15,5,Wool Blend Peacoat,istockphoto-641002994-612x612.jpg
+APP014,Hawaiian Print Shirt for a fun and tropical look.,16.99,20,5,Hawaiian Print Shirt,istockphoto-940313358-612x612.jpg
+APP015,Leather Harness combining style and functionality.,24.99,10,5,Leather Harness,istockphoto-636972540-612x612.jpg
+APP016,Sun Protection Shirt for UV protection during sunny days.,21.99,25,5,Sun Protection Shirt,istockphoto-538579788-612x612.jpg
+APP017,Tuxedo Costume for special occasions and formal events.,29.99,15,5,Tuxedo Costume,istockphoto-174982689-612x612.jpg
+APP018,Camouflage Jacket for outdoor adventures and rugged style.,26.99,20,5,Camouflage Jacket,istockphoto-491322875-612x612.jpg
+APP019,Knit Beanie Hat for extra warmth and style during winter.,12.99,10,5,Knit Beanie Hat,istockphoto-1298298978-612x612.jpg
+APP020,Soccer Jersey Costume for sports-loving pups.,18.99,15,5,Soccer Jersey Costume,istockphoto-152950107-612x612.jpg
