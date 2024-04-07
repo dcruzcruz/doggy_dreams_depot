@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     get :products_list, on: :collection
   end
 
+  resources :products do
+    get :display_new_recently, on: :collection
+  end
+
   # Root route
   root to: "home#index" # Assuming you have a HomeController with an index action
 
@@ -37,5 +41,6 @@ Rails.application.routes.draw do
 
   resources :categories
   resources :products, only: [:index, :show]
+  resources :products
 
 end

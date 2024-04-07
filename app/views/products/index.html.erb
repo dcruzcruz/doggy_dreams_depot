@@ -1,3 +1,7 @@
+<% if @category %>
+  <h2>Category: <%= @category.name %></h2>
+<% end %>
+
 <div class="container mt-4">
   <% unless params[:search].present? || params[:category].present? %>
   <%= paginate @products %>

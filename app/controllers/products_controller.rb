@@ -30,5 +30,4 @@ class ProductsController < ApplicationController
       @all_products = @all_products.order("RANDOM()")
     end
   end
-
 end
