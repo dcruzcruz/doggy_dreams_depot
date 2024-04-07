@@ -1,0 +1,53 @@
+<div class="container mt-3" style="max-width: 80%;">
+  <%= form_tag(products_list_products_path, method: :get, class: 'text-center') do %>
+    <div class="input-group">
+      <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search by product name or description' %>
+      <%= select_tag :category, options_for_select(Category.all.map { |c| [c.name, c.id] }, params[:category]), prompt: 'Select Category', class: 'form-select' %>
+      <%= button_tag 'Search', type: 'submit', class: 'btn btn-success' %>
+      <%= button_tag 'Reset', type: 'button', class: 'btn btn-secondary', onclick: 'resetForm()' %>
+    </div>
+  <% end %>
+</div>
+
+
+<div class="table-responsive mt-3">
+  <table class="table table-striped table-bordered align-middle">
+    <thead class="thead-dark">
+      <tr>
+        <th>Product Image</th>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @all_products.each do |product| %>
+        <tr>
+          <td>
+            <% if product.image.attached? %>
+              <%= image_tag url_for(product.image), class: "product-image", alt: product.product_name, width: "50px", height: "50px" %>
+            <% else %>
+              <%= image_tag "image.jpeg", class: "product-image", alt: "Placeholder Image", width: "50px", height: "50px" %>
+            <% end %>
+          </td>
+          <td><%= product.product_name %></td>
+          <td><%= product.description %></td>
+          <td><%= number_to_currency(product.price) %></td>
+          <td><%= product.category.name %></td>
+          <td>
+            <%= link_to 'Show', product_path(product), class: 'btn btn-primary' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<script>
+  function resetForm() {
+    document.getElementById('search').value = '';
+    document.getElementById('category').value = '';
+  }
+</script>

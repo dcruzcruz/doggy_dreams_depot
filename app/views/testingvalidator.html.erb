@@ -31,7 +31,35 @@
         </div>
     </nav>
 
-    <%= yield %>
+    <main class="home-page">
+        <section class="hero" data-track-location="Header">
+            <div class="home-container">
+                <div class="home-badge home-badge--color-cycle">
+                    <a data-track-cta="Get started" href="/signup/new?return_to_after_signup=%2Fget-started">Hundreds of Products</a>
+                </div>
+                <h1 class="hero__heading">Serving Wagging Tails and Happy Hearts</h1>
+                <div class="home-type-body-large font-weight-500">Your One-Stop Doggy Dreams Destination!</div>
+                <a class="margin-t-32 btn2 btn2--large" data-track-cta="Get started" href="/signup/new?return_to_after_signup=%2Fget-started">Get started</a>
+            </div>
+            <div class="hero-marquee" style="--card-count: 24;" >
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary">Left</button>
+                    <button type="button" class="btn btn-primary">Middle</button>
+                    <button type="button" class="btn btn-primary">Right</button>
+                </div>
+                <div class="container mt-4">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <% @products.each do |product| %>
+                            <%= render partial: 'products/product', locals: { product: product } %>
+                        <% end %>
+                    </div>
+                    <div class="container mt-4 age-item">
+                        <%= paginate @products %>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="bg-light p-3 mt-4">
         <div class="container">
