@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 
   def products_list
     # Fetch all products
-    @all_products = Product.all
+    @all_products = Product.order("RANDOM()")
 
     # If search parameters are present, filter products
     if params[:search].present?
