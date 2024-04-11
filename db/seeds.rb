@@ -26,17 +26,21 @@ categories.each do |category_name|
   Category.create(name: category_name)
 end
 
-# Seed a product
-toy_category = Category.find_by(name: 'Toys')
-Product.create!(
-  product_name: 'Example Toy',
-  description: 'This is an example toy product.',
-  sku: 'TOY0041',
-  price: 9.99,
-  stock: 50,
-  category: toy_category
-).image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'TOY004.jpg')), filename: 'TOY004.jpg', content_type: 'image/jpg')
-
+Province.destroy_all
+# Seed a provinces
+Province.create(name: "Alberta", gst_rate: 5, pst_rate: 0, hst_rate: 0)
+Province.create(name: "British Columbia", gst_rate: 5, pst_rate: 7, hst_rate: 0)
+Province.create(name: "Manitoba", gst_rate: 5, pst_rate: 7, hst_rate: 0)
+Province.create(name: "New Brunswick", gst_rate: 0, pst_rate: 0, hst_rate: 15)
+Province.create(name: "Newfoundland and Labrador", gst_rate: 0, pst_rate: 0, hst_rate: 15)
+Province.create(name: "Northwest Territories", gst_rate: 5, pst_rate: 0, hst_rate: 0)
+Province.create(name: "Nova Scotia", gst_rate: 0, pst_rate: 0, hst_rate: 15)
+Province.create(name: "Nunavut", gst_rate: 5, pst_rate: 0, hst_rate: 0)
+Province.create(name: "Ontario", gst_rate: 0, pst_rate: 0, hst_rate: 13)
+Province.create(name: "Prince Edward Island", gst_rate: 0, pst_rate: 0, hst_rate: 15)
+Province.create(name: "Quebec", gst_rate: 5, pst_rate: 9.975, hst_rate: 0)
+Province.create(name: "Saskatchewan", gst_rate: 5, pst_rate: 6, hst_rate: 0)
+Province.create(name: "Yukon", gst_rate: 5, pst_rate: 0, hst_rate: 0)
 # Assuming your CSV file is named products.csv and located in the root directory of your Rails application
 csv_file = Rails.root.join('lib', 'seeds', 'products.csv')
 
