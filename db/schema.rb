@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_10_220121) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_11_025839) do
   create_table "about_pages", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -192,12 +192,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_220121) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "address"
-    t.string "null"
-    t.string "phone_number"
-    t.integer "province_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["province_id"], name: "index_users_on_province_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -224,7 +219,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_10_220121) do
   add_foreign_key "payments", "orders"
   add_foreign_key "products", "categories"
   add_foreign_key "shipments", "orders"
-  add_foreign_key "users", "provinces"
   add_foreign_key "wishlists", "customers"
   add_foreign_key "wishlists", "products"
 end
