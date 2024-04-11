@@ -1,4 +1,9 @@
 class Cart < ApplicationRecord
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "customer_id", "id", "product_id", "quantity", "updated_at", "user_id"]
+  end
+
   belongs_to :customer
   belongs_to :product
 
