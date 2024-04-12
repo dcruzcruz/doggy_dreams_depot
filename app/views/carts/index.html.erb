@@ -1,0 +1,8 @@
+<h1>Your Shopping Cart</h1>
+
+<% @cart_items.each do |cart| %>
+  <div>
+    <%= cart.product.product_name %>: <%= cart.quantity %>
+  </div>
+<% end %>
+

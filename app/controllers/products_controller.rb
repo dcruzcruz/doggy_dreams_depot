@@ -31,4 +31,10 @@ class ProductsController < ApplicationController
       @all_products = @all_products.order("RANDOM()")
     end
   end
+
+  def add_to_cart
+    @product = Product.find(params[:id])
+    current_user.carts.create(product: @product)
+    redirect_to @product, notice: 'Product added to cart successfully.'
+  end
 end

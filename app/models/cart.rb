@@ -1,7 +1,7 @@
 class Cart < ApplicationRecord
 
   def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "user_id", "id", "product_id", "quantity", "updated_at", "user_id"]
+    ["created_at", "user_id", "id", "product_id", "quantity", "updated_at"]
   end
 
   belongs_to :user

@@ -11,7 +11,10 @@
       <h2><%= @product.product_name %></h2>
       <p><%= @product.description %></p>
       <p><strong>Price:</strong> <%= number_to_currency(@product.price) %></p>
-      <a href="#" class="btn btn-primary">Buy it</a>
+      <%= form_with(url: carts_path, method: :post, local: true) do |form| %>
+      <%= form.hidden_field :product_id, value: @product.id %>
+      <%= form.submit "Add to cart", class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
