@@ -1,8 +1,42 @@
-<h1>Your Shopping Cart</h1>
+<div class="container mt-5">
+  <h1>Shopping Cart</h1>
+  <% if @cart_items.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart_items.each do |cart| %>
+          <tr>
+            <td>
+            <% if cart.product.image.attached? %>
+              <%= image_tag url_for(cart.product.image), class: "product-image", alt: cart.product.product_name, width: "50px", height: "50px" %>
+            <% else %>
+              <%= image_tag "image.jpeg", class: "product-image", alt: "Placeholder Image", width: "50px", height: "50px" %>
+            <% end %>
+            </td>
+            <td><%= cart.product.product_name %></td>
+            <td><%= number_to_currency(cart.product.price) %></td>
+            <td>
+              <%= form_with(model: cart, url: cart_path(cart), method: :patch, local: true) do |form| %>
+                <%= form.text_field :quantity, class: "form-control quantity-field", min: 1 %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to 'Remove', cart, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-<% @cart_items.each do |cart| %>
-  <div>
-    <%= cart.product.product_name %>: <%= cart.quantity %>
-  </div>
-<% end %>
-
+  <% else %>
+    <p>Your shopping cart is empty.</p>
+  <% end %>
+</div>

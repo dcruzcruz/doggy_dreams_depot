@@ -29,7 +29,10 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <a href="<% %>" class="nav-link"><%= current_user.email %></a>
+            <a href="<%= edit_user_registration_path %>" class="nav-link"><%= current_user.email %></a>
+          </li>
+          <li class="nav-item">
+            <a href="<%= carts_path %>" class="nav-link">My Cart</a>
           </li>
           <li class="nav-item">
             <%= form_for(current_user, url: destroy_user_session_path, method: :delete) do |f| %>

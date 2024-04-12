@@ -6,7 +6,20 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = current_user.cart
+    @cart_items = current_user.carts
+  end
+
+  def update
+    @cart = Cart.find(params[:id])
+    if @cart.update(cart_params)
+      redirect_to @cart, notice: 'Cart was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def cart_params
+    params.require(:cart).permit(:quantity)
   end
 
   def create
@@ -22,8 +35,13 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart_item = current_user.cart_items.find(params[:id])
-    @cart_item.destroy
-    redirect_to carts_path, notice: 'Product removed from cart.'
+    @cart_item = current_user.carts.find_by(id: params[:id])
+
+    if @cart_item
+      @cart_item.destroy
+      redirect_to root_path, notice: 'Product removed from cart.'
+    else
+      redirect_to root_path, alert: 'Product not found in cart.'
+    end
   end
 end
