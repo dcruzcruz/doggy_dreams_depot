@@ -1,8 +1,8 @@
 class Customer < ApplicationRecord
   belongs_to :province
-  has_many :orders
-  has_many :carts
-  has_many :wishlists
+  has_many :orders, dependent: :destroy
+  has_many :carts, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
 
   validates :first_name, presence: true
   validates :last_name, presence: true

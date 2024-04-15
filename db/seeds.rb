@@ -1,5 +1,6 @@
 require 'csv'
-
+Province.destroy_all
+Category.destroy_all
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -26,7 +27,6 @@ categories.each do |category_name|
   Category.create(name: category_name)
 end
 
-Province.destroy_all
 # Seed a provinces
 Province.create(name: "Alberta", gst_rate: 5, pst_rate: 0, hst_rate: 0)
 Province.create(name: "British Columbia", gst_rate: 5, pst_rate: 7, hst_rate: 0)
@@ -49,7 +49,10 @@ CSV.foreach(csv_file, headers: true) do |row|
   category_id = row['category_id'].to_i
   category = Category.find_by(id: category_id)
 
-  next if category.nil? # Skip if category not found
+  if category.nil?
+    puts "Category with ID #{category_id} not found for product #{row['product_name']}. Skipping..."
+    next
+  end
 
   product_attributes = {
     product_name: row['product_name'],
@@ -60,11 +63,21 @@ CSV.foreach(csv_file, headers: true) do |row|
     category: category
   }
 
-  product = Product.create!(product_attributes)
+  product = Product.new(product_attributes)
 
   # Attach image if image is provided
   if row['image'].present?
-    product.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', row['image'])), filename: row['image'], content_type: 'image/jpeg')
+    image_path = Rails.root.join('app', 'assets', 'images', 'products', row['image'])
+    if File.exist?(image_path)
+      product.image.attach(io: File.open(image_path), filename: row['image'], content_type: 'image/jpeg')
+    else
+      puts "Image file #{row['image']} not found for product #{row['product_name']}. Skipping..."
+    end
+  end
+
+  if product.save
+    puts "Product '#{product.product_name}' created successfully."
+  else
+    puts "Failed to create product '#{product.product_name}': #{product.errors.full_messages.join(', ')}"
   end
 end
-

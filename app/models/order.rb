@@ -5,9 +5,9 @@ class Order < ApplicationRecord
   end
 
   belongs_to :user
-  has_many :order_items
-  has_one :payment
-  has_one :shipment
+  has_many :order_items, dependent: :destroy
+  has_one :payment, dependent: :destroy
+  has_one :shipment, dependent: :destroy
 
   validates :order_date, presence: true
   validates :total_price, presence: true, numericality: { greater_than_or_equal_to: 0 }

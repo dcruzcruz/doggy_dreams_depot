@@ -9,9 +9,9 @@ class Product < ApplicationRecord
   end
 
   belongs_to :category
-  has_many :order_items
-  has_many :carts
-  has_many :wishlists
+  has_many :order_items, dependent: :destroy
+  has_many :carts, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
 
   has_one_attached :image
 

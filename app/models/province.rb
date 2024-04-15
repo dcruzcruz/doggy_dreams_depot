@@ -8,5 +8,5 @@ class Province < ApplicationRecord
     ["users"]
   end
 
-  has_many :users
+  has_many :users, dependent: :destroy
 end
