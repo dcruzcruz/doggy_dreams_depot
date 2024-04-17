@@ -1,24 +1,55 @@
 <div class="container">
-  <h1 class="text-center mb-4">Order Confirmation</h1>
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="card">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-sm">
         <div class="card-body">
-          <h3>Thank you for your order!</h3>
-          <p>Your order details:</p>
-          <p><strong>Order Number:</strong> <%= @order.id %></p>
-          <p><strong>Total Amount:</strong> <%= number_to_currency(@order.total_price) %></p>
-          <p><strong>Order Date:</strong> <%= @order.order_date.strftime('%B %d, %Y') %></p>
-          <hr>
-          <% if @order.shipment %>
-            <h4>Shipping Details:</h4>
-            <p><strong>Address:</strong> <%= @order.shipment.address %></p>
-            <p><strong>City:</strong> <%= @order.shipment.city %></p>
-            <p><strong>Province:</strong> <%= @order.shipment.state %></p>
-            <p><strong>Country:</strong> <%= @order.shipment.country %></p>
-            <p><strong>ZIP Code:</strong> <%= @order.shipment.zip_code %></p>
+          <h2 class="card-title text-center mb-4">Order Confirmation</h2>
+          <div class="mb-4">
+            <h4 class="mb-3">Thank you for your order!</h4>
+            <div class="d-flex justify-content-between mb-3">
+              <div>
+                <strong>Order Number:</strong> <%= @order.id %>
+              </div>
+              <div>
+                <strong>Order Date:</strong> <%= @order.order_date.strftime('%B %d, %Y') %>
+              </div>
+            </div>
             <hr>
-          <% else %>
-            <p>No shipping details available.</p>
-          <% end %>
-          <h4>Ordered Products
+            <% if @order.user %>
+              <h4 class="mb-3">User Information:</h4>
+              <div>
+                <strong>First Name:</strong> <%= @order.user.first_name %>
+              </div>
+              <div>
+                <strong>Last Name:</strong> <%= @order.user.last_name %>
+              </div>
+              <div>
+                <strong>Address:</strong> <%= @order.user.address %>
+              </div>
+              <div>
+                <strong>Province:</strong> <%= @order.user.province.name %>
+              </div>
+              <hr>
+            <% else %>
+              <p class="text-muted">No user information available.</p>
+            <% end %>
+            <h4 class="mb-3">Ordered Products:</h4>
+            <ul class="list-group">
+              <% @order.order_items.each do |item| %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <%= "#{item.quantity} x #{item.product.product_name}" %>
+                  </div>
+                  <span class="badge badge-primary badge-pill"><%= number_to_currency(item.price) %></span>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="text-center">
+            <a href="/" class="btn btn-primary">Continue Shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
