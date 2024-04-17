@@ -1,47 +1,49 @@
-<body>
-  <div class="container">
-    <h1 class="text-center mb-4">My Cart</h1>
-    <% if @cart_items.any? %>
-      <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead class="bg-light">
+<div class="container">
+  <h1 class="text-center mb-4">My Cart</h1>
+  <% if @cart_items.any? %>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="bg-light">
+          <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart| %>
             <tr>
-              <th></th>
-              <th>Product</th>
-              <th>Unit Price</th>
-              <th>Quantity</th>
-              <th></th>
+              <td class="align-middle">
+                <% if cart.product.image.attached? %>
+                  <%= image_tag url_for(cart.product.image), class: "product-image", alt: cart.product.product_name, width: "50px", height: "50px" %>
+                <% else %>
+                  <%= image_tag "image.jpeg", class: "product-image", alt: "Placeholder Image", width: "50px", height: "50px" %>
+                <% end %>
+              </td>
+              <td class="align-middle"><%= cart.product.product_name %></td>
+              <td class="align-middle"><%= number_to_currency(cart.product.price) %></td>
+              <td class="align-middle">
+                <div class="input-group">
+                  <%= button_to '−', decrease_quantity_cart_path(cart), method: :patch, class: 'btn btn-outline-secondary', 'data-cart-id': cart.id %>
+                  <input type="text" class="form-control text-center" value="<%= cart.quantity %>" readonly style="height: 38px; font-weight: bold; color: black; width: 50px;">
+                  <%= button_to '+', increase_quantity_cart_path(cart), method: :patch, class: 'btn btn-outline-secondary', 'data-cart-id': cart.id %>
+                </div>
+              </td>
+              <td class="align-middle">
+                <%= button_to 'Remove', cart_path(cart), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            <% @cart_items.each do |cart| %>
-              <tr>
-                <td class="align-middle">
-                  <% if cart.product.image.attached? %>
-                    <%= image_tag url_for(cart.product.image), class: "product-image", alt: cart.product.product_name, width: "50px", height: "50px" %>
-                  <% else %>
-                    <%= image_tag "image.jpeg", class: "product-image", alt: "Placeholder Image", width: "50px", height: "50px" %>
-                  <% end %>
-                </td>
-                <td class="align-middle"><%= cart.product.product_name %></td>
-                <td class="align-middle"><%= number_to_currency(cart.product.price) %></td>
-                <td class="align-middle">
-                  <div class="input-group">
-                    <%= button_to '−', decrease_quantity_cart_path(cart), method: :patch, class: 'btn btn-outline-secondary', 'data-cart-id': cart.id %>
-                    <input type="text" class="form-control text-center" value="<%= cart.quantity %>" readonly style="height: 38px; width: 40px; font-weight: bold; color: black;">
-                    <%= button_to '+', increase_quantity_cart_path(cart), method: :patch, class: 'btn btn-outline-secondary', 'data-cart-id': cart.id %>
-                  </div>
-                </td>
-                <td class="align-middle">
-                  <%= button_to 'Remove', cart_path(cart), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
-    <% else %>
-      <p class="text-center">Your shopping cart is empty.</p>
-    <% end %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+ <!-- Button for Checkout -->
+  <div class="text-center">
+    <%= link_to "Proceed to Checkout", checkout_path(current_user), class: "btn btn-primary" %>
   </div>
-</body>
+<% else %>
+  <p class="text-center">Your shopping cart is empty.</p>
+<% end %>
+</div>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/contact', to: 'contact_pages#show'
   get '/about', to: 'about_pages#show'
   get '/products_list', to: 'products#products_list', as: 'products_list'
+  get '/order_confirmation/:id', to: 'checkout#order_confirmation', as: 'order_confirmation'
 
   resources :products do
     get :products_list, on: :collection
@@ -44,12 +45,13 @@ Rails.application.routes.draw do
       post 'products/:id/add_to_cart', to: 'products#add_to_cart', as: 'add_to_cart'
     end
   end
-
+  post '/checkout/create_order', to: 'checkout#create_order', as: 'create_order_checkout'
   # Other routes for the application
 
   resources :categories
   resources :products, only: [:index, :show]
   resources :products
   resources :users
+  resources :checkout, only: [:show, :create]
 
 end

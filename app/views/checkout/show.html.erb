@@ -1,0 +1,60 @@
+<div class="container">
+  <h1 class="text-center mb-4">Checkout Summary</h1>
+  <% if @cart_items.any? %>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead class="bg-light">
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart_items.each do |cart_item| %>
+            <tr>
+              <td><%= cart_item.product.product_name %></td>
+              <td><%= number_to_currency(cart_item.product.price) %></td>
+              <td><%= cart_item.quantity %></td>
+              <td><%= number_to_currency(cart_item.product.price * cart_item.quantity) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-6">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <td>Subtotal:</td>
+              <td><%= number_to_currency(@subtotal) %></td>
+            </tr>
+            <tr>
+              <td>PST:</td>
+              <td><%= number_to_currency(@pst) %></td>
+            </tr>
+            <tr>
+              <td>GST:</td>
+              <td><%= number_to_currency(@gst) %></td>
+            </tr>
+            <tr>
+              <td>HST:</td>
+              <td><%= number_to_currency(@hst) %></td>
+            </tr>
+            <tr>
+              <td>Total:</td>
+              <td><%= number_to_currency(@total) %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="text-center">
+      <%= button_to 'Confirm Order', create_order_checkout_path, method: :post, class: 'btn btn-primary' %>
+    </div>
+  <% else %>
+    <p class="text-center">Your shopping cart is empty.</p>
+  <% end %>
+</div>

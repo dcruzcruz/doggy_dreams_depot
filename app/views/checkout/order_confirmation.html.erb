@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center mb-4">Order Confirmation</h1>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body">
+          <h3>Thank you for your order!</h3>
+          <p>Your order details:</p>
+          <p><strong>Order Number:</strong> <%= @order.id %></p>
+          <p><strong>Total Amount:</strong> <%= number_to_currency(@order.total_price) %></p>
+          <p><strong>Order Date:</strong> <%= @order.order_date.strftime('%B %d, %Y') %></p>
+          <hr>
+          <% if @order.shipment %>
+            <h4>Shipping Details:</h4>
+            <p><strong>Address:</strong> <%= @order.shipment.address %></p>
+            <p><strong>City:</strong> <%= @order.shipment.city %></p>
+            <p><strong>Province:</strong> <%= @order.shipment.state %></p>
+            <p><strong>Country:</strong> <%= @order.shipment.country %></p>
+            <p><strong>ZIP Code:</strong> <%= @order.shipment.zip_code %></p>
+            <hr>
+          <% else %>
+            <p>No shipping details available.</p>
+          <% end %>
+          <h4>Ordered Products

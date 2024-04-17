@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   belongs_to :province
   has_many :carts, dependent: :destroy
+  has_many :orders
 
   # Add the address attribute
   attribute :address, :string
