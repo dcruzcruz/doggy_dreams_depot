@@ -24,7 +24,15 @@ class CartsController < ApplicationController
 
   def create
     @product = Product.find(params[:product_id])
-    @cart = current_user.carts.build(product: @product, quantity: 1) # Default quantity set to 1
+    @cart = current_user.carts.find_or_initialize_by(product_id: @product.id)
+
+    if @cart.persisted?
+      # If the cart item already exists, update its quantity
+      @cart.quantity += 1
+    else
+      # If the cart item is new, set its quantity to 1
+      @cart.quantity = 1
+    end
 
     if @cart.save
       redirect_to @product, notice: 'Product added to cart successfully.'
@@ -35,13 +43,23 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart_item = current_user.carts.find_by(id: params[:id])
-
-    if @cart_item
-      @cart_item.destroy
-      redirect_to root_path, notice: 'Product removed from cart.'
-    else
-      redirect_to root_path, alert: 'Product not found in cart.'
-    end
+    @cart_item = Cart.find(params[:id])
+    @cart_item.destroy
+    redirect_to carts_path, notice: 'Item removed from cart successfully.'
   end
+
+  def increase_quantity
+    @cart_item = current_user.carts.find(params[:id])
+    @cart_item.quantity += 1
+    @cart_item.save
+    redirect_to carts_path, notice: 'Quantity increased successfully.'
+  end
+
+  def decrease_quantity
+    @cart_item = current_user.carts.find(params[:id])
+    @cart_item.quantity -= 1 if @cart_item.quantity > 1
+    @cart_item.save
+    redirect_to carts_path, notice: 'Quantity decreased successfully.'
+  end
+
 end

@@ -1,8 +1,10 @@
 class ProductsController < ApplicationController
   # before_action :authenticate_user!
+
   def show
     @product = Product.find(params[:id])
   end
+
   def index
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
@@ -34,7 +36,17 @@ class ProductsController < ApplicationController
 
   def add_to_cart
     @product = Product.find(params[:id])
-    current_user.carts.create(product: @product)
+    @cart_item = current_user.carts.find_by(product_id: @product.id)
+
+    if @cart_item.present?
+      # If the product is already in the cart, increment the quantity
+      @cart_item.quantity += 1
+      @cart_item.save
+    else
+      # If the product is not in the cart, create a new cart item with quantity 1
+      current_user.carts.create(product: @product, quantity: 1)
+    end
+
     redirect_to @product, notice: 'Product added to cart successfully.'
   end
 end
