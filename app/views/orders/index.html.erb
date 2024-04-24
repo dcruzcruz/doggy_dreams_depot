@@ -1,0 +1,40 @@
+<!-- app/views/orders/index.html.erb -->
+<div class="container mt-4">
+  <h1 class="mb-4">My Orders</h1>
+
+  <% if @orders.any? %>
+    <div class="row justify-content-center">
+      <% @orders.each do |order| %>
+        <div class="col-md-8 mb-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-between mb-3">
+                <div><strong>Order Number:</strong> <%= order.id %></div>
+                <div><strong>Order Date:</strong> <%= order.order_date.strftime("%B %d, %Y") %></div>
+              </div>
+              <hr>
+              <h4 class="mb-3">Ordered Products:</h4>
+              <ul class="list-group mb-3">
+                <% order.order_items.each do |item| %>
+                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <%= "#{item.quantity} x #{item.product.product_name}" %>
+                    <span class="badge badge-primary badge-pill"><%= number_to_currency(item.price) %></span>
+                  </li>
+                <% end %>
+              </ul>
+
+              <div class="d-flex justify-content-between">
+                <a href="<%= order_path(order) %>" class="btn btn-info">View Order</a>
+                <span class="badge badge-secondary"><strong>Total:</strong> <%= number_to_currency(order.order_items.sum { |item| item.quantity * item.price }) %></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="alert alert-info" role="alert">
+      No orders found.
+    </div>
+  <% end %>
+</div>

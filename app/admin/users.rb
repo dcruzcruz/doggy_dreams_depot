@@ -26,6 +26,41 @@ ActiveAdmin.register User do
     f.actions
   end
 
+    # Show page for a user
+    show do
+      attributes_table do
+        row :email
+        row :first_name
+        row :last_name
+        row :created_at
+      end
+
+      panel "Orders" do
+        table_for user.orders do
+          column "Order ID", :id
+          column "Order Date", :order_date
+          column "Total Price" do |order|
+            number_to_currency(order.total_price)
+          end
+          column "Details" do |order|
+            table_for order.order_items do
+              column "Product" do |item|
+                item.product.product_name
+              end
+              column "Quantity", :quantity
+              column "Price" do |item|
+                number_to_currency(item.price)
+              end
+              column "Subtotal" do |item|
+                number_to_currency(item.quantity * item.price)
+              end
+            end
+          end
+        end
+      end
+    end
+
+
 
 
   # See permitted parameters documentation:

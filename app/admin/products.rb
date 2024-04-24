@@ -19,6 +19,8 @@ ActiveAdmin.register Product do
   filter :sku
   filter :description
   filter :category
+  filter :created_at
+  filter :stock
 
   form do |f|
     f.inputs do
